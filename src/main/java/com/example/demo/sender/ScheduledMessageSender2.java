@@ -8,21 +8,20 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Slf4j
-public class ScheduledMessageSender {
+public class ScheduledMessageSender2 {
 
   private final KafkaTemplate<String, String> kafkaTemplate;
 
   @Autowired
-  public ScheduledMessageSender(KafkaTemplate<String, String> kafkaTemplate) {
+  public ScheduledMessageSender2(KafkaTemplate<String, String> kafkaTemplate) {
     this.kafkaTemplate = kafkaTemplate;
   }
 
-  @Scheduled(fixedDelay = 10000) // 10초마다 실행되도록 설정
+  @Scheduled(fixedDelay = 50000) // 50초마다 실행되도록 설정
   public void sendMessage() {
-    String message = "Hello, Kafka!"; // 전송할 메시지
-    String topic = "test-topic";
+    String message = "Hello, Elasticsearch!"; // 전송할 메시지
+    String topic = "test-topic2";
     kafkaTemplate.send(topic, message);
     log.info("Message sent: {}", message);
   }
 }
-
