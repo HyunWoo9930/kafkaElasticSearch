@@ -28,6 +28,12 @@ dependencies {
 
 	implementation 'org.springframework.boot:spring-boot-starter-data-elasticsearch'
 
+	// https://mvnrepository.com/artifact/org.elasticsearch.client/elasticsearch-rest-high-level-client
+	implementation 'org.elasticsearch.client:elasticsearch-rest-high-level-client:7.13.4'
+
+	//Gson
+	implementation 'com.google.code.gson:gson:2.8.5'
+
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'

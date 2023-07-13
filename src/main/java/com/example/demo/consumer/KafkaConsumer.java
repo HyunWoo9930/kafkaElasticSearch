@@ -4,6 +4,8 @@ package com.example.demo.consumer;
 
 import com.example.demo.dataModel.MessageData;
 import com.example.demo.dataModel.MessageData2;
+import com.example.demo.dataModel.OptimizedOrder;
+import com.example.demo.dataModel.Order;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
@@ -34,6 +36,15 @@ public class KafkaConsumer {
     MessageData2 data = MessageData2.create(message);
     elasticsearchOperations.save(data);
     log.info("Message indexed: {}", message);
+  }
+
+  @KafkaListener(topics = "dataOptimize-test-topic")
+  public void receiveMessage3(String message) {
+    Order order = Order.create(message);
+    OptimizedOrder response = OptimizedOrder.toResponse(order);
+    elasticsearchOperations.save(response);
+    log.info("Message indexed: {}", message);
+    log.info("Optimized Message indexed: {}", response);
   }
 }
 

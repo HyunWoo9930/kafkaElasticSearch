@@ -161,4 +161,3 @@ Kafka는 고성능 및 확장성을 보장하기 위해 멀티스레드 아키�
         - ElasticsearchOperations를 사용하여 Elasticsearch와 데이터를 색인하고 검색하며, 다양한 CRUD(Create, Read, Update, Delete) 작업을 수행
 5. Elasticsearch에 제대로 적제 되었는지 확인
     1. [http://localhost:9200/{index}/_search](http://localhost:9200/index/_search) 해서, value값이 제대로 올라가는지 확인.
-        - sample
