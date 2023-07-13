@@ -24,3 +24,16 @@ services:
     ports:
       - 9200:9200
       - 9300:9300
+
+  grafana:
+    image: grafana/grafana-enterprise-arm64v8-linux:latest
+    ports:
+      - 3000:3000
+    volumes:
+      - grafana_data:/var/lib/grafana
+    depends_on:
+      - elasticsearch
+
+volumes:
+  grafana_data:
+  elasticsearch_data:
