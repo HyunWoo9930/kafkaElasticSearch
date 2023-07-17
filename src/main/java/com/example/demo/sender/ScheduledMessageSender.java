@@ -17,7 +17,7 @@ public class ScheduledMessageSender {
     this.kafkaTemplate = kafkaTemplate;
   }
 
-  @Scheduled(fixedDelay = 10000) // 10초마다 실행되도록 설정
+  @Scheduled(fixedDelay = 1000) // 10초마다 실행되도록 설정
   public void sendMessage() {
     String message = "Hello, Kafka!"; // 전송할 메시지
     String topic = "test-topic";

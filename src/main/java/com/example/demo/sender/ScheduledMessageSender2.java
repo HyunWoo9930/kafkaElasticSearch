@@ -17,7 +17,7 @@ public class ScheduledMessageSender2 {
     this.kafkaTemplate = kafkaTemplate;
   }
 
-  @Scheduled(fixedDelay = 50000) // 50초마다 실행되도록 설정
+  @Scheduled(fixedDelay = 5) // 50초마다 실행되도록 설정
   public void sendMessage() {
     String message = "Hello, Elasticsearch!"; // 전송할 메시지
     String topic = "test-topic2";
